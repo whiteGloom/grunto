@@ -1,14 +1,9 @@
-var ed = require('./smth');
-console.log(ed);
+import additional from './smt';
 
 function a() {
   console.log(123);
 }
 
-function b() {
-  console.log(321);
-}
-
-var c = ' a';
+console.log(additional());
 
 a();

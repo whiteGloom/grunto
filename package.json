@@ -1,6 +1,6 @@
 {
   "name": "grunto",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/whiteGloom/grunto#readme",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@rollup/plugin-babel": "^5.2.0",
     "grunt": "^1.2.1",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-stylus": "^1.2.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-rollup": "^11.3.0"
   }
 }
