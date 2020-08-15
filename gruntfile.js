@@ -21,7 +21,8 @@ module.exports = function(grunt) {
       options: {
         plugins: [
           babel({
-            exclude: './node_modules/**'
+            exclude: './node_modules/**',
+            babelHelpers: 'bundled' // Also, you can check the "plugin-transform-runtime" plugin for Babel to cut final size.
           })
         ]
       },
@@ -38,7 +39,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: {
+    clean: { // Be careful with setting this script
       options: {
         'no-write': false
       },

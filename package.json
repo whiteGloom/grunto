@@ -1,10 +1,12 @@
 {
   "name": "grunto",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "grunt",
+    "watch": "grunt watch",
+    "test": "babel-node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,8 @@
   "homepage": "https://github.com/whiteGloom/grunto#readme",
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-babel": "^5.2.0",
     "grunt": "^1.2.1",
     "grunt-contrib-clean": "^2.0.0",

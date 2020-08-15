@@ -1,9 +1,22 @@
-import additional from './smt';
+import externalFunction from './externalScript';
 
-function a() {
-  console.log(123);
+function someFunction() {
+  console.log('Text of someFunction');
 }
 
-console.log(additional());
+class someClass {
+  constructor() {
+    this.property = 'Property of someClass';
+  }
 
-a();
+  getProperty() {
+    return this.property
+  }
+}
+
+const classInstance = new someClass();
+console.log(classInstance.getProperty());
+
+externalFunction();
+
+someFunction();
