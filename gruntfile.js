@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    clean: { // Be careful with setting this script
+    clean: { // Be careful when setting this script.
       options: {
         'no-write': false
       },

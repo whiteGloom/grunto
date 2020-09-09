@@ -1,12 +1,12 @@
 {
   "name": "grunto",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
     "build": "grunt",
     "watch": "grunt watch",
-    "test": "babel-node dist/index.js"
+    "test": "babel-node spec/run.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-rollup": "^11.3.0"
+    "grunt-rollup": "^11.3.0",
+    "jasmine": "^3.6.1"
   }
 }
