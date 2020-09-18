@@ -19,3 +19,4 @@
 * **[Babel](https://babeljs.io/)**
 * **[Stylus](https://stylus-lang.com/)**
 * **[Jasmine](https://jasmine.github.io/)**
+* **[ESLint](https://eslint.org/)**
