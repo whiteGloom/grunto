@@ -5,18 +5,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-rollup');
   grunt.loadNpmTasks('grunt-contrib-stylus');
+  grunt.loadNpmTasks('grunt-eslint');
 
   grunt.initConfig({
-    watch: {
-      scripts: {
-        files: './src/**/*.js',
-        tasks: ['rollup:main']
-      },
-      styles: {
-        files: './src/**/*.styl',
-        tasks: ['stylus:main']
-      }
-    },
     rollup: {
       options: {
         plugins: [
@@ -39,14 +30,29 @@ module.exports = function(grunt) {
         }
       }
     },
+    watch: {
+      scripts: {
+        files: './src/**/*.js',
+        tasks: ['rollup:main', 'eslint']
+      },
+      styles: {
+        files: './src/**/*.styl',
+        tasks: ['stylus:main']
+      }
+    },
     clean: { // Be careful when setting this script.
       options: {
         'no-write': false
       },
       dist: ['dist/*']
+    },
+    eslint: {
+      target: ['src/**/*.js']
     }
   });
 
-  grunt.registerTask('default', ['clean', 'rollup:main', 'stylus:main']);
-  grunt.registerTask('watcher', ['clean', 'rollup:main', 'stylus:main', 'watch']);
-}
+  grunt.registerTask('build', ['clean', 'rollup:main', 'stylus:main', 'eslint']);
+  grunt.registerTask('watcher', ['build', 'watch']);
+
+  grunt.registerTask('default', ['build']);
+};

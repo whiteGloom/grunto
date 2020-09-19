@@ -1,6 +1,6 @@
 {
   "name": "grunto",
-  "version": "0.2.4",
+  "version": "0.2.7",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
@@ -24,12 +24,12 @@
     "@babel/node": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-babel": "^5.2.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.9.0",
+    "eslint-config-wgl-main": "github:whiteGloom/eslint-config-wgl-main",
     "grunt": "^1.2.1",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^23.0.0",
     "grunt-rollup": "^11.3.0",
     "jasmine": "^3.6.1"
   }
