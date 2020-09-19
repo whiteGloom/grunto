@@ -49,4 +49,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean', 'rollup:main', 'stylus:main']);
   grunt.registerTask('watcher', ['clean', 'rollup:main', 'stylus:main', 'watch']);
-}
+};

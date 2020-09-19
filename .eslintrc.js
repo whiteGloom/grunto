@@ -84,6 +84,11 @@ module.exports = {
     'space-before-function-paren': ['error', 'never'],
     'space-in-parens': 'error',
     'space-infix-ops': 'error',
-    'spaced-comment': ['error', 'always']
+    'spaced-comment': ['error', 'always'],
+
+    /* ECMAScript 6 */
+    'object-shorthand': 'error',
+    'no-var': 'error',
+    'prefer-const': 'error'
   }
 };
