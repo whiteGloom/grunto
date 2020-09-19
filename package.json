@@ -1,6 +1,6 @@
 {
   "name": "grunto",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.1.0",
+    "grunt-eslint": "^23.0.0",
     "grunt-rollup": "^11.3.0",
     "jasmine": "^3.6.1"
   }
