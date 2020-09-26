@@ -1,6 +1,6 @@
 {
   "name": "grunto",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "@rollup/plugin-babel": "^5.2.0",
     "eslint-config-wgl-main": "github:whiteGloom/eslint-config-wgl-main",
     "grunt": "^1.2.1",
+    "grunt-concurrent": "^3.0.0",
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-stylus": "^1.2.0",
     "grunt-contrib-watch": "^1.1.0",

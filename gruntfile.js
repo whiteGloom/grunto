@@ -6,8 +6,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-rollup');
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-eslint');
+  grunt.loadNpmTasks('grunt-concurrent');
 
+  /* Configurations for tasks */
   grunt.initConfig({
+    /* Main tasks */
     rollup: {
       options: {
         plugins: [
@@ -23,6 +26,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    eslint: {
+      options: {
+        failOnError: false
+      },
+      target: ['src/**/*.js']
+    },
     stylus: {
       main: {
         files: {
@@ -30,28 +39,35 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: {
-      scripts: {
-        files: './src/**/*.js',
-        tasks: ['rollup:main', 'eslint']
-      },
-      styles: {
-        files: './src/**/*.styl',
-        tasks: ['stylus:main']
-      }
-    },
+
+    /* Service tasks */
     clean: { // Be careful when setting this script.
       options: {
         'no-write': false
       },
       dist: ['dist/*']
     },
-    eslint: {
-      target: ['src/**/*.js']
+    concurrent: {
+      web: ['scripts', 'styles']
+    },
+    watch: {
+      scripts: {
+        files: './src/**/*.js',
+        tasks: ['scripts']
+      },
+      styles: {
+        files: './src/**/*.styl',
+        tasks: ['styles']
+      }
     }
   });
 
-  grunt.registerTask('build', ['clean', 'rollup:main', 'stylus:main', 'eslint']);
+
+  /* Tasks */
+  grunt.registerTask('scripts', ['rollup:main', 'eslint']);
+  grunt.registerTask('styles', ['stylus:main']);
+
+  grunt.registerTask('build', ['clean', 'concurrent:web']);
   grunt.registerTask('watcher', ['build', 'watch']);
 
   grunt.registerTask('default', ['build']);
