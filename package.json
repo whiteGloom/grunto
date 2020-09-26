@@ -1,12 +1,12 @@
 {
   "name": "grunto",
-  "version": "0.2.8",
+  "version": "1.0.0",
   "description": "grunto",
   "main": "index.js",
   "scripts": {
     "build": "grunt",
     "watch": "grunt watch",
-    "test": "babel-node spec/run.js",
+    "tests": "babel-node spec/run.js",
     "lint": "eslint src/**/*.js"
   },
   "repository": {
