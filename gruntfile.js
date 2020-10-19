@@ -1,73 +1,38 @@
-const babel = require('@rollup/plugin-babel').default;
-
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-rollup');
-  grunt.loadNpmTasks('grunt-contrib-stylus');
-  grunt.loadNpmTasks('grunt-eslint');
   grunt.loadNpmTasks('grunt-concurrent');
 
-  /* Configurations for tasks */
-  grunt.initConfig({
-    /* Main tasks */
-    rollup: {
-      options: {
-        plugins: [
-          babel({
-            exclude: './node_modules/**',
-            babelHelpers: 'bundled' // Also, you can check the "plugin-transform-runtime" plugin for Babel to cut final size.
-          })
-        ]
-      },
-      main: {
-        files: {
-          'dist/index.js': 'src/index.js'
-        }
-      }
-    },
-    eslint: {
-      options: {
-        failOnError: false
-      },
-      target: ['src/**/*.js']
-    },
-    stylus: {
-      main: {
-        files: {
-          'dist/css.css': 'src/index.styl'
-        }
-      }
-    },
 
-    /* Service tasks */
+  /* Configurations for tasks */
+  grunt.config.init({
+    concurrent: {
+      /**
+       * Put here your concurrent scripts
+       * Example: "web: ['scripts', 'styles']"
+       */
+    },
     clean: { // Be careful when setting this script.
       options: {
         'no-write': false
       },
       dist: ['dist/*']
-    },
-    concurrent: {
-      web: ['scripts', 'styles']
-    },
-    watch: {
-      scripts: {
-        files: './src/**/*.js',
-        tasks: ['scripts']
-      },
-      styles: {
-        files: './src/**/*.styl',
-        tasks: ['styles']
-      }
     }
   });
 
+  /* Uncomment line below if you want to compile scripts */ // eslint-disable-next-line
+  // grunt.loadTasks('grunt/scripts');  // eslint-disable-line
 
-  /* Tasks */
-  grunt.registerTask('scripts', ['rollup:main', 'eslint']);
-  grunt.registerTask('styles', ['stylus:main']);
+  /* Uncomment line below if you want to compile styles */ // eslint-disable-next-line
+  // grunt.loadTasks('grunt/styles');
 
-  grunt.registerTask('build', ['clean', 'concurrent:web']);
+
+  /**
+   * Main tasks.
+   * For the first add the needed tasks into "build" task
+   * Example: "grunt.registerTask('build', ['clean', 'concurrent:web']);"
+   */
+  grunt.registerTask('build', ['clean']);
   grunt.registerTask('watcher', ['build', 'watch']);
 
   grunt.registerTask('default', ['build']);
