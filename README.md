@@ -10,7 +10,9 @@
 
 **[↑ To languages](#languages)**
 
-**Grunto** — a preset  for my [Grunt](https://gruntjs.com/) based projects.
+**Grunto** — a preset for my [Grunt](https://gruntjs.com/) based projects.
+
+Contains a stupid modular system.
 
 **List of major packages:**
 

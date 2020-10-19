@@ -20,10 +20,10 @@ module.exports = function(grunt) {
     }
   });
 
-  /* Uncomment line below if you want to compile scripts */ // eslint-disable-next-line
+  /* Uncomment line below and follow the instructions in the task file if you want to compile scripts */ // eslint-disable-next-line
   // grunt.loadTasks('grunt/scripts');  // eslint-disable-line
 
-  /* Uncomment line below if you want to compile styles */ // eslint-disable-next-line
+  /* Uncomment line below and follow the instructions in the task file if you want to compile styles */ // eslint-disable-next-line
   // grunt.loadTasks('grunt/styles');
 
 
